@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2DCA1 – IT Trends | Unit 1: Multimedia | English Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Serif+4:wght@300;400;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sky: #e8f4fd;
+    --sky-mid: #d0eaf9;
+    --sky-deep: #b8ddf5;
+    --azure: #3a9bd5;
+    --azure-dark: #2176ae;
+    --azure-deeper: #155e8a;
+    --white: #ffffff;
+    --snow: #f7fbff;
+    --slate: #2c3e50;
+    --muted: #5a7a8a;
+    --light-border: #c8dff0;
+    --accent-gold: #e8a020;
+    --accent-teal: #1abc9c;
+    --accent-coral: #e05c5c;
+    --shadow-soft: 0 4px 24px rgba(58,155,213,0.10);
+    --shadow-card: 0 2px 16px rgba(33,118,174,0.12);
+    --radius: 14px;
+    --radius-sm: 8px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: linear-gradient(160deg, #eaf6ff 0%, #f7fbff 40%, #e8f4fd 100%);
+    color: var(--slate);
+    min-height: 100vh;
+    line-height: 1.75;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: linear-gradient(135deg, var(--azure-deeper) 0%, var(--azure-dark) 50%, var(--azure) 100%);
+    color: #fff;
+    padding: 48px 32px 36px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .site-header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='28'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+    pointer-events: none;
+  }
+  .header-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.30);
+    border-radius: 20px;
+    padding: 4px 18px;
+    font-size: 0.78rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .site-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  }
+  .site-header .subtitle {
+    font-size: 1.05rem;
+    opacity: 0.88;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+  .header-meta {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    opacity: 0.80;
+  }
+  .header-meta span { display: flex; align-items: center; gap: 6px; }
+
+  /* ── LAYOUT ── */
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ── TOC ── */
+  .toc-wrapper {
+    background: var(--white);
+    border: 1px solid var(--light-border);
+    border-radius: var(--radius);
+    margin: 36px auto;
+    max-width: 960px;
+    padding: 28px 36px;
+    box-shadow: var(--shadow-card);
+  }
+  .toc-wrapper h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--azure-dark);
+    font-size: 1.3rem;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--sky-deep);
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 8px;
+  }
+  .toc-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    color: var(--slate);
+    font-size: 0.88rem;
+    transition: background 0.2s, color 0.2s;
+  }
+  .toc-item:hover { background: var(--sky); color: var(--azure-dark); }
+  .toc-num {
+    background: var(--azure);
+    color: #fff;
+    border-radius: 50%;
+    width: 22px; height: 22px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 600;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    max-width: 960px;
+    margin: 28px auto;
+    padding: 0 20px;
+  }
+  .card {
+    background: var(--white);
+    border: 1px solid var(--light-border);
+    border-radius: var(--radius);
+    padding: 36px 40px;
+    box-shadow: var(--shadow-card);
+    margin-bottom: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--azure-dark), var(--azure), var(--accent-teal));
+  }
+
+  .section-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--azure-dark), var(--azure));
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+  }
+  .card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.65rem;
+    color: var(--azure-deeper);
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+  .card h3 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.15rem;
+    color: var(--azure-dark);
+    margin: 22px 0 10px;
+    padding-left: 14px;
+    border-left: 3px solid var(--azure);
+  }
+  .card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--azure-deeper);
+    margin: 16px 0 8px;
+  }
+  .card p {
+    color: #3d5060;
+    font-size: 0.96rem;
+    margin-bottom: 12px;
+    font-family: 'Source Serif 4', serif;
+    font-weight: 300;
+  }
+  .card ul, .card ol {
+    padding-left: 22px;
+    margin-bottom: 14px;
+  }
+  .card li {
+    color: #3d5060;
+    font-size: 0.94rem;
+    margin-bottom: 7px;
+    font-family: 'Source Serif 4', serif;
+    font-weight: 300;
+  }
+  .card li strong { color: var(--azure-deeper); font-weight: 600; }
+
+  /* ── HIGHLIGHT BOXES ── */
+  .highlight-box {
+    background: linear-gradient(135deg, var(--sky) 0%, var(--sky-mid) 100%);
+    border: 1px solid var(--sky-deep);
+    border-left: 4px solid var(--azure);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-size: 0.93rem;
+    color: var(--azure-deeper);
+    font-family: 'Source Serif 4', serif;
+  }
+  .highlight-box strong { color: var(--azure-dark); }
+
+  .example-box {
+    background: #f0faf6;
+    border: 1px solid #a8dfc7;
+    border-left: 4px solid var(--accent-teal);
+    border-radius: var(--radius-sm);
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 0.91rem;
+    color: #1a5c40;
+  }
+  .example-box::before { content: '📌 Example: '; font-weight: 700; }
+
+  .definition-box {
+    background: linear-gradient(135deg, #fff8e8, #fdf3d0);
+    border: 1px solid #e8c96e;
+    border-left: 4px solid var(--accent-gold);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-size: 0.93rem;
+    color: #6b4c00;
+  }
+  .definition-box::before { content: '📖 Definition: '; font-weight: 700; color: #a06c00; }
+
+  /* ── TAGS / CHIPS ── */
+  .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+  .tag {
+    background: var(--sky-mid);
+    border: 1px solid var(--light-border);
+    color: var(--azure-deeper);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 4px 14px;
+    border-radius: 20px;
+  }
+  .tag.accent { background: var(--azure); color: #fff; border-color: var(--azure); }
+
+  /* ── GRID CARDS ── */
+  .use-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 16px;
+    margin: 18px 0;
+  }
+  .use-card {
+    background: var(--snow);
+    border: 1px solid var(--light-border);
+    border-radius: var(--radius-sm);
+    padding: 18px 16px;
+    text-align: center;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .use-card:hover { box-shadow: var(--shadow-soft); transform: translateY(-2px); }
+  .use-card .icon { font-size: 2rem; margin-bottom: 10px; }
+  .use-card h4 { color: var(--azure-dark); font-size: 0.95rem; margin-bottom: 6px; }
+  .use-card p { font-size: 0.83rem; color: var(--muted); font-family: 'DM Sans', sans-serif; margin: 0; }
+
+  /* ── ELEMENT CARDS ── */
+  .element-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 18px;
+    margin: 18px 0;
+  }
+  .element-card {
+    background: linear-gradient(160deg, var(--white) 0%, var(--sky) 100%);
+    border: 1px solid var(--light-border);
+    border-radius: var(--radius-sm);
+    padding: 20px 18px;
+    position: relative;
+  }
+  .element-card .e-num {
+    position: absolute; top: 14px; right: 14px;
+    background: var(--azure);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 20px;
+  }
+  .element-card h4 { color: var(--azure-deeper); font-size: 1rem; margin-bottom: 8px; }
+  .element-card p { font-size: 0.86rem; color: #3d5060; margin: 0; font-family: 'DM Sans', sans-serif; }
+
+  /* ── HARDWARE DEVICE CARDS ── */
+  .hw-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+    margin: 16px 0;
+  }
+  .hw-card {
+    background: var(--white);
+    border: 1px solid var(--light-border);
+    border-radius: var(--radius-sm);
+    padding: 16px;
+  }
+  .hw-card h5 { color: var(--azure-dark); font-size: 0.92rem; margin-bottom: 6px; }
+  .hw-card p { font-size: 0.83rem; color: var(--muted); margin: 0; font-family: 'DM Sans', sans-serif; }
+
+  /* ── SOFTWARE TABLE ── */
+  .sw-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.87rem; }
+  .sw-table th {
+    background: linear-gradient(135deg, var(--azure-dark), var(--azure));
+    color: #fff;
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+  }
+  .sw-table td {
+    padding: 9px 14px;
+    border-bottom: 1px solid var(--sky-mid);
+    color: #3d5060;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .sw-table tr:nth-child(even) td { background: var(--sky); }
+  .sw-table tr:hover td { background: var(--sky-mid); }
+
+  /* ── CAREER GRID ── */
+  .career-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin: 18px 0;
+  }
+  .career-pill {
+    background: linear-gradient(135deg, var(--azure-dark) 0%, var(--azure) 100%);
+    color: #fff;
+    border-radius: 50px;
+    padding: 10px 18px;
+    text-align: center;
+    font-size: 0.84rem;
+    font-weight: 500;
+    box-shadow: 0 3px 12px rgba(33,118,174,0.25);
+  }
+
+  /* ── POWERPOINT STEPS ── */
+  .step-list { counter-reset: step; margin: 16px 0; }
+  .step-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 14px;
+    align-items: flex-start;
+  }
+  .step-num {
+    background: var(--azure);
+    color: #fff;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .step-content { flex: 1; }
+  .step-content strong { display: block; color: var(--azure-darker, var(--azure-deep)); font-size: 0.95rem; margin-bottom: 3px; }
+  .step-content span { font-size: 0.88rem; color: var(--muted); font-family: 'DM Sans', sans-serif; }
+
+  /* ── DIVIDER ── */
+  .divider {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--sky-deep), transparent);
+    margin: 8px 0 24px;
+  }
+
+  /* ── INFO STRIP ── */
+  .info-strip {
+    background: linear-gradient(90deg, var(--azure-deeper) 0%, var(--azure-dark) 100%);
+    color: #fff;
+    border-radius: var(--radius-sm);
+    padding: 14px 22px;
+    margin: 18px 0;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .info-strip .icon { font-size: 1.4rem; flex-shrink: 0; }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    background: linear-gradient(135deg, var(--azure-deeper) 0%, var(--azure-dark) 100%);
+    color: rgba(255,255,255,0.88);
+    padding: 40px 32px 28px;
+    margin-top: 48px;
+  }
+  .footer-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 24px;
+    margin-bottom: 28px;
+  }
+  .footer-col h4 {
+    color: #fff;
+    font-size: 0.88rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+  .footer-col a {
+    display: block;
+    color: rgba(255,255,255,0.78);
+    text-decoration: none;
+    font-size: 0.84rem;
+    margin-bottom: 7px;
+    transition: color 0.2s, padding-left 0.2s;
+  }
+  .footer-col a:hover { color: #fff; padding-left: 4px; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.18);
+    padding-top: 18px;
+    text-align: center;
+    font-size: 0.8rem;
+    opacity: 0.65;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    .card { padding: 24px 20px; }
+    .toc-wrapper { padding: 22px 20px; }
+    .use-grid { grid-template-columns: 1fr 1fr; }
+    .career-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    .site-footer, .toc-wrapper { page-break-inside: avoid; }
+    .card { page-break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ HEADER ═══════════════════ -->
+<header class="site-header">
+  <div class="header-badge">Online Study Material</div>
+  <h1>2DCA1 – IT Trends</h1>
+  <p class="subtitle">Unit 1 &nbsp;|&nbsp; Introduction to Multimedia – Complete English Notes</p>
+  <div class="header-meta">
+    <span>📘 Dr. Sunita Dwivedi &nbsp;·&nbsp; Dept. of New Media Technology</span>
+    <span>✍️ Prashant Parashar &nbsp;·&nbsp; Dept. of Management</span>
+    <span>🏛️ Makhanlal Chaturvedi National University of Journalism & Communication</span>
+  </div>
+</header>
+
+<!-- ═══════════════════ TABLE OF CONTENTS ═══════════════════ -->
+<div class="container">
+<div class="toc-wrapper">
+  <h2>📑 Table of Contents</h2>
+  <div class="toc-grid">
+    <a href="#s1" class="toc-item"><span class="toc-num">1</span> Introduction to Multimedia</a>
+    <a href="#s2" class="toc-item"><span class="toc-num">2</span> Definition &amp; Concept</a>
+    <a href="#s3" class="toc-item"><span class="toc-num">3</span> Need / Importance</a>
+    <a href="#s4" class="toc-item"><span class="toc-num">4</span> Uses of Multimedia</a>
+    <a href="#s5" class="toc-item"><span class="toc-num">5</span> Elements of Multimedia</a>
+    <a href="#s6" class="toc-item"><span class="toc-num">6</span> Hardware &amp; Software Requirements</a>
+    <a href="#s7" class="toc-item"><span class="toc-num">7</span> Multimedia Applications / Tools</a>
+    <a href="#s8" class="toc-item"><span class="toc-num">8</span> Creating Simple Multimedia with PowerPoint</a>
+    <a href="#s9" class="toc-item"><span class="toc-num">9</span> Applications Across Industries</a>
+    <a href="#s10" class="toc-item"><span class="toc-num">10</span> Future of Multimedia</a>
+    <a href="#s11" class="toc-item"><span class="toc-num">11</span> Career in Multimedia Production</a>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════════ SECTION 1 ═══════════════════ -->
+<div class="section">
+<div class="card" id="s1">
+  <div class="section-num">Section 1</div>
+  <h2>Introduction to Multimedia</h2>
+  <hr class="divider">
+  <p>Multimedia is a medium of communication that provides information to users in a simple and powerful way. We are all well acquainted with smartphones, computers, and other digital devices. We use these devices for a wide variety of tasks — listening to music, watching videos or movies, playing games, reading animated books, booking tickets, or shopping online.</p>
+  <p>When we use these devices, everything that appears on screen — pictures, sound, animation, and video — working together simultaneously — that is Multimedia. In simple terms:</p>
+
+  <div class="definition-box">
+    The <strong>integration (combining) of Text, Graphics, Sound, Video, and Animation</strong> is called <strong>Multimedia</strong>.
+  </div>
+
+  <p>The use of multimedia has made computers, smartphones, and other digital devices easier to use. For example, the different app icons on your mobile phone are created using graphics — you tap or click on them and use them. All of this is made possible through multimedia.</p>
+  <p>In today's world, multimedia is being used extensively across education, entertainment, business, advertising, and many other fields.</p>
+
+  <div class="tag-row">
+    <span class="tag accent">Text</span>
+    <span class="tag accent">Graphics</span>
+    <span class="tag accent">Audio</span>
+    <span class="tag accent">Video</span>
+    <span class="tag accent">Animation</span>
+    <span class="tag">Integration</span>
+    <span class="tag">Digital Devices</span>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════════ SECTION 2 ═══════════════════ -->
+<div class="section">
+<div class="card" id="s2">
+  <div class="section-num">Section 2</div>
+  <h2>Definition &amp; Concept of Multimedia</h2>
+  <hr class="divider">
+  <p>The word <strong>Multimedia</strong> is made up of two words:</p>
+  <ul>
+    <li><strong>Multi</strong> — meaning many / multiple</li>
+    <li><strong>Media</strong> — a medium of communication through which you can convey your message to others easily</li>
+  </ul>
+  <p>Multimedia is a part of media in which several elements are used together, such as text, image, audio, video, animation, etc. Multimedia presents information in a very easy and attractive way.</p>
+
+  <div class="definition-box">
+    In simple words, <strong>Multimedia is a technology</strong> in which text, data, images, graphics, audio, and video are combined and presented digitally in such a way that the user receives information in a better and more effective manner. Information displayed in the form of pictures and sound is Multimedia.
+  </div>
+
+  <div class="example-box">
+    If you are watching a video on YouTube and someone is providing information through it — you can see a video, images are visible, you can hear the voice/sound, there is audio as well as text — that is the best example of Multimedia.
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════════ SECTION 3 ═══════════════════ -->
+<div class="section">
+<div class="card" id="s3">
+  <div class="section-num">Section 3</div>
+  <h2>Need / Importance of Multimedia</h2>
+  <hr class="divider">
+  <p>Multimedia plays an extremely important role in our daily lives. Various forms of multimedia are an inseparable part of our daily routine and are very useful for many other important tasks.</p>
+
+  <h3>3.1 Entertainment on the Go</h3>
+  <p>If you are listening to songs while travelling, playing mobile games, or watching a cartoon show — all of these are examples of multimedia. Music is a form of multimedia used broadly everywhere, every minute of the day. Even listening to music on the radio can be considered multimedia.</p>
+
+  <h3>3.2 Communication with People</h3>
+  <p>The main purpose of using multimedia is to communicate easily with people. For example, a radio channel is able to share music with all the people of a state or country. Radio stations also need to play soothing music that is popular with a large number of listeners so that the number of advertisements can increase — which is how they earn money.</p>
+
+  <h3>3.3 In Education</h3>
+  <p>If you are a teacher, you can use various forms of multimedia to reach your students. Teachers use different types of multimedia tools to explain difficult subjects to students. A teacher can use audio and video lectures, presentations, and other multimedia tools. Students also want variety in teaching methods; they get bored easily if a teacher always discusses a lesson in the same way without any variety. So if you want to make lessons easy and interesting for students, you should use multimedia.</p>
+
+  <h3>3.4 Business Websites</h3>
+  <p>If you are building a company's website, it is very important that the information on the website is simple, intuitive, and interesting. Websites are powerful tools for attracting customers to a specific product. If you use various forms of multimedia on your website, your visitor will stay longer and browse your entire site. You will have a better chance of them buying or using one of your products. You can choose from good graphics, music files, video files, and even simple mini-games to add to your website.</p>
+
+  <h3>3.5 Reaching Target Audiences</h3>
+  <p>If communication is one of your work goals, you should definitely use some digital media to help you reach your target audience better. You need to understand that people do not like reading long articles and very detailed product information, so it is better to keep it in audio or video form to attract their attention.</p>
+</div>
+</div>
+
+<!-- ═══════════════════ SECTION 4 ═══════════════════ -->
+<div class="section">
+<div class="card" id="s4">
+  <div class="section-num">Section 4</div>
+  <h2>Uses of Multimedia</h2>
+  <hr class="divider">
+  <p>In the current age of communication, there is a great need for promotion and dissemination of information — whether it is news or any other kind of information. With the arrival of more and more TV channels, advertising agencies, event management companies, and media industries, the need for multimedia has truly increased. Apart from entertainment and gaming, multimedia is being used in every industry such as Hospitality, Aviation, Banking, Insurance, Science &amp; Technology, etc.</p>
+
+  <div class="use-grid">
+    <div class="use-card">
+      <div class="icon">🎓</div>
+      <h4>Education</h4>
+      <p>Difficult subjects made easy through images, presentations, and animation.</p>
+    </div>
+    <div class="use-card">
+      <div class="icon">📢</div>
+      <h4>Advertising</h4>
+      <p>Attractive ads designed using multimedia to persuade and influence customers.</p>
+    </div>
+    <div class="use-card">
+      <div class="icon">📰</div>
+      <h4>Communication Media</h4>
+      <p>Print, broadcast, and online media all use multimedia to deliver information.</p>
+    </div>
+    <div class="use-card">
+      <div class="icon">🎮</div>
+      <h4>Entertainment &amp; Gaming</h4>
+      <p>Films, animations, OTT platforms, and games powered by multimedia.</p>
+    </div>
+    <div class="use-card">
+      <div class="icon">💼</div>
+      <h4>Business</h4>
+      <p>Attractive websites, mobile apps, and e-marketing platforms.</p>
+    </div>
+    <div class="use-card">
+      <div class="icon">🏛️</div>
+      <h4>Governance</h4>
+      <p>Government uses multimedia to reach citizens about schemes &amp; digital payments.</p>
+    </div>
+    <div class="use-card">
+      <div class="icon">🏥</div>
+      <h4>Health &amp; Medicine</h4>
+      <p>Awareness about diseases, vaccination, nutrition through animation &amp; video.</p>
+    </div>
+    <div class="use-card">
+      <div class="icon">🔬</div>
+      <h4>Science &amp; Technology</h4>
+      <p>Molecular modelling, simulation, virtual surgery training for doctors.</p>
+    </div>
+  </div>
+
+  <h3>4.1 Education</h3>
+  <p>Multimedia has great significance in the field of education — especially for children in schools. It is used extensively in education and training, making it possible to understand even the most difficult subjects through images, presentations, and animation. Today, classrooms are no longer limited to the traditional method; they now need audio and visual media. Multimedia integrates all of these in one system. The use of multimedia has promoted the development of computer-based training. In medical education, virtual environments allow students to develop practical skills through virtual activities. Multimedia is primarily used for modelling and simulation in mathematical and scientific research. Many e-learning companies and platforms are working in this field.</p>
+
+  <h3>4.2 Advertising</h3>
+  <p>Multimedia plays an important role in the field of advertising — whether print or electronic advertising. It is used extensively in advertisements to convince and influence customers. It becomes easier to display a product in an attractive form and attract customers through multimedia. Professional software is used to design effective multimedia advertisements on computers, which are then presented to consumers with detailed descriptions of the product's features.</p>
+
+  <h3>4.3 Communication Media</h3>
+  <p>Instead of emphasising only one media format, today there are multiple communication platforms including printing, broadcasting, and online distribution. Information reaches people through more than one medium. All these mediums use multimedia. For example, various magazines and newspapers use multimedia. Multimedia plays an important role in publishing houses — newspaper design and other tasks are done through it. Today, it's not just text that we see in newspapers but also photographs. This not only makes newspapers an ideal example but also proves the capability of multimedia. In the field of communication media, with the help of multimedia software, e-magazines and e-papers are also an effective medium in the online world.</p>
+
+  <h3>4.4 Entertainment &amp; Gaming Industry</h3>
+  <p>Multimedia is used most extensively in the entertainment industry, especially for developing special effects in films and animation. Entertainment everywhere at all times — digital channels like Netflix and Amazon Prime are all possible through multimedia. In films, special effects like flying cars, falling from great heights, and other impossible scenes are made possible through multimedia in post-production. Multimedia's most exciting applications include games. Today, live internet is used for gaming, where multiplayer games are popular. Integrated audio and video effects make various types of games more entertaining. 3D effects and virtual reality games are also very popular.</p>
+
+  <h3>4.5 Business</h3>
+  <p>Today multimedia is being used extensively in business. Business establishments are getting attractive flex boards made for advertising their products, visible in every area of the city through hoardings. Attractive and effective advertisements are being designed through graphics and published in newspapers and magazines to reach as many customers as possible. Using multimedia, business establishments are creating attractive websites to reach more and more customers with limited expenses. Companies like Amazon, Flipkart, and several e-marketing companies have established themselves globally and are making huge profits. Through attractive websites and mobile apps using multimedia, customers are shopping from home.</p>
+
+  <h3>4.6 Governance</h3>
+  <p>Using multimedia, the government is reaching citizens very easily with its schemes. Making all government schemes accessible to the general public through posters, mobile apps, and websites and making them easy to use has been possible through multimedia. The use of digital payments, etc. has also become easy for everyone through multimedia.</p>
+
+  <h3>4.7 Health &amp; Medicine</h3>
+  <p>Through different images, animations, and videos — from children to the elderly and from cities to villages — it has become very easy to build awareness about cleanliness, symptoms and prevention of common diseases, nutrition, immunisation, etc.</p>
+
+  <h3>4.8 Others</h3>
+  <p>Multimedia has wide applications in the field of Science and Technology. It is capable of transferring audio, messages, and formatted multimedia documents. It also helps in live conversations through audio messages. In mathematical and scientific research, multimedia is primarily used for modelling and simulation. For example, a scientist can see a molecular model of a particular substance and make changes in it to arrive at a new substance. In hospitals, information about patients' health, and being able to see images of the inside of the body on screen through diagnostic instruments is also possible through multimedia. Doctors can be trained by watching virtual surgeries, or they can simulate how viruses and bacteria-caused diseases affect the human body and then develop techniques to prevent it.</p>
+</div>
+</div>
+
+<!-- ═══════════════════ SECTION 5 ═══════════════════ -->
+<div class="section">
+<div class="card" id="s5">
+  <div class="section-num">Section 5</div>
+  <h2>Elements of Multimedia</h2>
+  <hr class="divider">
+  <p>Multimedia is a collection of many elements such as text, audio, graphics, video, and animation. All multimedia elements are delivered to users in a better and more effective manner through computers. The detailed description of multimedia elements is as follows:</p>
+
+  <div class="element-grid">
+    <div class="element-card">
+      <span class="e-num">5.1</span>
+      <h4>📝 Text</h4>
+      <p>Used mostly for headings, headlines, menus, etc. Text presents information through letters, numbers, and special characters. Common software: MS Word, Notepad, WordPad. Formats: .doc, .txt, etc.</p>
+    </div>
+    <div class="element-card">
+      <span class="e-num">5.2</span>
+      <h4>🔊 Audio</h4>
+      <p>Sound waves that we can hear. Audio is an analog signal converted to digital via ADC. Includes speech, music, etc. Formats: MPEG, MP3, WAV, MIDI. Software: Sound Forge, Audacity, Audio Cutter.</p>
+    </div>
+    <div class="element-card">
+      <span class="e-num">5.3</span>
+      <h4>🖼️ Graphics</h4>
+      <p>Every multimedia presentation is graphics-based. Graphics make any subject more effectively presentable visually. Software: Adobe Photoshop, CorelDRAW, InDesign. Viewers: Windows Picture Manager, Picasa.</p>
+    </div>
+    <div class="element-card">
+      <span class="e-num">5.4</span>
+      <h4>🎬 Video</h4>
+      <p>Moving pictures with sound — the best way to communicate with each other. Presents information very effectively and saves large amounts of time. Editing software: Adobe Premiere, VideoPad. Formats: MP4, AVI, etc.</p>
+    </div>
+    <div class="element-card">
+      <span class="e-num">5.5</span>
+      <h4>✨ Animation</h4>
+      <p>A series of still graphic images displayed one after another at a certain interval to give the impression of motion. Requires at least 25–30 sequential images per second. Used in advertisements, cartoons, films, and video games. Software: 3D Studio, Adobe Photoshop, Animator Studio.</p>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <strong>Audio Players:</strong> QuickTime, Real Player, Windows Media Player <br>
+    <strong>Animation Viewers:</strong> Internet Explorer, Windows Pictures, Fax Viewer
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════════ SECTION 6 ═══════════════════ -->
+<div class="section">
+<div class="card" id="s6">
+  <div class="section-num">Section 6</div>
+  <h2>Hardware &amp; Software Requirements for Multimedia</h2>
+  <hr class="divider">
+  <p>An essential feature of a multimedia computer system is that it should be capable of <strong>capturing</strong>, <strong>editing</strong>, and <strong>using</strong> different types of media (video, audio, etc.), <strong>storing</strong> all of them, and <strong>transmitting</strong> all types of data from one computer to another via modem or network.</p>
+  <p>Since many types of media are involved simultaneously in multimedia, special hardware and software are required to use and create multimedia projects. For using multimedia, a mobile device, laptop, or desktop computer can be used — but designers typically use high-configuration desktop computers for multimedia-related projects, along with other peripheral devices.</p>
+
+  <h3>6.1 Multimedia Hardware</h3>
+  <p>For multimedia applications, the computer's memory (storage capacity) and processing capacity requirements are greater than those of ordinary computers that can only handle text. Based on their capabilities, multimedia computer systems can be divided into two categories:</p>
+  <div class="tag-row">
+    <span class="tag">i. Multimedia Presentation System</span>
+    <span class="tag">ii. Multimedia Development System</span>
+  </div>
+  <p>All current computer systems and other digital devices such as mobiles and tablets permit multimedia presentation, so they all have the necessary hardware. A computer processor with high processing capacity, high-resolution display screen, speakers, microphone, CD-ROM drive, etc. are essential components of a Multimedia Presentation System.</p>
+
+  <p>In a <strong>Multimedia Development System</strong>, other hardware devices are also used, divided into the following categories:</p>
+
+  <div class="hw-grid">
+    <div class="hw-card">
+      <h5>📼 Analog Media Devices</h5>
+      <p>Input (microphone, video camera, photographic camera), Processing (video/audio effect devices, audio mixer), Storage &amp; Output (speakers, video display, video/audio tape recorders).</p>
+    </div>
+    <div class="hw-card">
+      <h5>💾 Digital Media Devices</h5>
+      <p>Capturing (keyboard, image scanner, OCR device), Processing (video/audio encoders/decoders, digital effect devices), Presentation (printer, monitor, projector).</p>
+    </div>
+    <div class="hw-card">
+      <h5>🗄️ General-Purpose Devices</h5>
+      <p>Storage devices (CD-ROM, floppy drive, hard drive, network interface, general-purpose processors). These are typically all digital.</p>
+    </div>
+    <div class="hw-card">
+      <h5>🖱️ Interaction Devices</h5>
+      <p>Devices that allow users to directly control multimedia applications. Examples: keyboard, mouse, joystick, electronic pen.</p>
+    </div>
+  </div>
+
+  <h3>6.2 Detailed Hardware Devices</h3>
+
+  <h4>6.2.1 Central Processing Unit (CPU)</h4>
+  <p>The CPU is the most important part of a computer — it is where all processing and synchronisation of tasks occurs. The computer's capability is measured by the speed of data processing. For multimedia use, Pentium Processor IV or higher is preferred.</p>
+
+  <h4>6.2.2 Graphic Card</h4>
+  <p>A graphic card is connected to the computer's motherboard. When you view pictures or videos or play games on a computer, the graphic card makes them look sharp and clear. It is that part of computer hardware that displays all graphics on the monitor. For each visible element — pictures, video, animation — the graphic card renders it to the display by converting graphical data into signals that the monitor can understand. It is also known as Video Card, Graphic Adapter, or Display Adapter.</p>
+  <p>For simple multimedia use (watching pictures, videos, or films), you don't need a separate graphics card because it is already built-in to your computer. This built-in graphics card uses the CPU and RAM for multimedia-related processing. However, if you want to run high-graphics software like gaming or video editing, you need to install an additional capacity graphics card. This graphics card has its own RAM and processor, which we call the GPU (Graphical Processing Unit).</p>
+
+  <h4>6.2.3 Memory &amp; Storage Devices</h4>
+  <p>You need memory to store productions, original audio and video clips, edited audio and video segments, and various files used during multimedia production. You also need memory for backups of your project files.</p>
+
+  <div class="hw-grid">
+    <div class="hw-card">
+      <h5>Primary Memory</h5>
+      <p>Contains only the data and instructions the computer is currently working on. Limited and fast storage. Loses data when computer is switched off. Two types: <strong>RAM</strong> and <strong>ROM</strong>.</p>
+    </div>
+    <div class="hw-card">
+      <h5>Cache Memory</h5>
+      <p>Very high-speed semiconductor memory that helps the CPU process at high speed. Acts as a buffer between the CPU and main memory. Stores data and program parts most frequently used by the CPU.</p>
+    </div>
+    <div class="hw-card">
+      <h5>Secondary Memory</h5>
+      <p>Also known as external memory or non-volatile memory (permanently stores data). Slower than main memory. Used for permanent data storage. Examples: Disk, CD-ROM, DVD. Multimedia files generally require more storage space.</p>
+    </div>
+  </div>
+
+  <h4>6.2.4 Input Devices</h4>
+  <div class="hw-grid">
+    <div class="hw-card"><h5>⌨️ Keyboard</h5><p>The most common input device. Helps input data into the computer. Layout is similar to a traditional typewriter. Available in 84, 101/102, and now 104/108-key versions. Special multimedia keyboards also available for volume control, gaming, etc.</p></div>
+    <div class="hw-card"><h5>🖱️ Mouse</h5><p>An optical computer mouse uses a light source (LED) and a light detector to track movement relative to the surface. Typically has two buttons (left and right) and a scroll bar in the middle. Used to control the cursor on screen; cannot be used to enter text.</p></div>
+    <div class="hw-card"><h5>🕹️ Joystick</h5><p>A pointing device used to move the cursor's position on the monitor screen. It is a rod with round balls at both the lower and upper ends. The lower ball moves in a socket. Can be moved in all four directions. Mainly used in Computer-Aided Design (CAD) and computer games.</p></div>
+    <div class="hw-card"><h5>✒️ Light Pen</h5><p>A pointing device similar to a pen. Used to select displayed menu items or draw pictures on the monitor screen. It has a photocell and an optical system. When the tip is moved to the monitor screen and the button is pressed, the photocell sensing element detects the screen location and sends the relevant signal to the CPU. Mainly used with design tablets.</p></div>
+    <div class="hw-card"><h5>📐 Digitizer</h5><p>A hardware device that receives analog information — such as sound or light — and records it digitally. The information is stored in a file on a computing device. This process is called digitization. Example: A digital camera is a digitizer — light enters through the lens and hardware/software converts it to binary data stored as an image file.</p></div>
+    <div class="hw-card"><h5>🖨️ Scanner</h5><p>An input device that works like a photocopier machine. Used when information available on paper needs to be transferred to the computer's hard disk for modification. The scanner captures the image from the source, which is converted to digital form and stored on disk. These images can be edited before printing.</p></div>
+    <div class="hw-card"><h5>🎙️ Microphone</h5><p>An input device for sound input which is stored in digital form. Used as a standalone mic or integrated with headphones. Used for adding sound to multimedia presentations or mixing music.</p></div>
+    <div class="hw-card"><h5>🔊 Speaker</h5><p>An output device that produces sound stored in digital form. Used for adding sound to multimedia presentations and displaying films. All modern computer monitors have integrated speakers; mobile devices also have integrated speakers.</p></div>
+    <div class="hw-card"><h5>📷 Digital Camera</h5><p>An input device for capturing images stored in digital form. Used for adding images to multimedia presentations or for personal purposes.</p></div>
+    <div class="hw-card"><h5>🎥 Digital Video Camera</h5><p>An input device for capturing pictures/videos stored in digital form. Used for adding video to multimedia presentations or for personal purposes.</p></div>
+  </div>
+
+  <h4>6.2.5 Output Devices</h4>
+  <div class="hw-grid">
+    <div class="hw-card"><h5>🖥️ Flat-Panel Display Monitor</h5><p>Refers to a class of video devices with less volume, weight, and power requirements than CRT. Can be hung on walls or worn on wrists. Used in calculators, video games, monitors, laptops, graphics displays. Divided into: <strong>Emissive</strong> (plasma panels, LED) and <strong>Non-emissive</strong> (LCD).</p></div>
+    <div class="hw-card"><h5>🖨️ Printer</h5><p>An electronic device used to print digital information on paper. Three types: <strong>Dot Matrix Printer</strong> (prints by joining dots like characters, has 24 pins), <strong>Laser Printer</strong> (produces high-quality images for office/business use using a laser beam and toner), <strong>Image Projector</strong> (projects information from a computer onto a large screen for a group to view simultaneously).</p></div>
+    <div class="hw-card"><h5>🔉 Sound Card &amp; Speakers</h5><p>The computer needs both a sound card and speakers to listen to audio like music, speech, and sound effects. Most motherboards provide an on-board sound card. The main function of the sound card is to convert digital sound signals to analog for the speaker, which we can increase or decrease as needed.</p></div>
+    <div class="hw-card"><h5>🥽 VR Headset</h5><p>For gaming technology, Virtual Reality headsets and other devices are also included in multimedia application hardware.</p></div>
+  </div>
+
+  <h3>6.3 Multimedia Software</h3>
+  <p>Software is a collection of instructions or programs that direct the computer to perform a specific task. Multimedia software works with hardware to use and produce media elements. Various software is available to use and produce these media elements (films, sound, text, animation, graphics, etc.) such as: Paint Brush, Photo Finish, Animator, Photoshop, 3D Studio, Corel Draw, Sound Forge, Adobe Premiere, Apple HyperCard, Photo Magic, Picture Publisher, etc.</p>
+
+  <h4>6.3.1 Multimedia Software Categories</h4>
+  <table class="sw-table">
+    <thead>
+      <tr><th>Category</th><th>Purpose</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Device Driver Software</strong></td><td>Used to install and configure multimedia peripherals (mouse, sound card, etc.)</td></tr>
+      <tr><td><strong>Media Players</strong></td><td>Audio and video player applications that can play one or more types of multimedia file formats</td></tr>
+      <tr><td><strong>Media Conversion Tools</strong></td><td>Used for encoding/decoding multimedia files and converting one file format to another</td></tr>
+      <tr><td><strong>Multimedia Editing Tools</strong></td><td>Used to create and edit digital multimedia data</td></tr>
+      <tr><td><strong>Multimedia Authoring Tools</strong></td><td>Utilities specially built for developing multimedia projects</td></tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<!-- ═══════════════════ SECTION 7 ═══════════════════ -->
+<div class="section">
+<div class="card" id="s7">
+  <div class="section-num">Section 7</div>
+  <h2>Multimedia Applications &amp; Tools</h2>
+  <hr class="divider">
+  <p>Text, graphics, animation, audio, and video are integral parts of multimedia. Various software tools are available for producing and editing these media elements. The categories of basic software tools are as follows:</p>
+
+  <h3>7.1 Text Editing Tools</h3>
+  <p>These tools are used to create letters, resumes, invoices, purchase orders, user manuals for projects, and other documents such as newspapers and printed books. Word processing software like <strong>MS Word</strong> is an excellent example of a text tool. All word processing software has additional features along with the main word processing functions.</p>
+  <div class="highlight-box">
+    <strong>Features of MS Word include:</strong><br>
+    • Create new files, open saved files, save files, and print<br>
+    • Insert symbols, formulas, and equations into files<br>
+    • Correct spelling and grammar mistakes<br>
+    • Align text within margins<br>
+    • Insert page numbers at top or bottom of page<br>
+    • Mail merge documents and create letters, envelopes<br>
+    • Create tables by entering number of columns and rows
+  </div>
+
+  <h3>7.2 Painting &amp; Drawing Tools</h3>
+  <p>These tools usually come with a graphical user interface with pull-down menus for quick selection. You can create almost all types of possible shapes and resize them using these tools. Drawing files can be imported or exported in many image formats like .gif, .tif, .jpg, .bmp, etc.</p>
+  <div class="info-strip">
+    <span class="icon">🎨</span>
+    <span><strong>Examples:</strong> CorelDraw, Freehand, Designer, Photoshop, Fireworks</span>
+  </div>
+  <div class="highlight-box">
+    <strong>Features include:</strong> Tools for drawing straight lines, rectangular areas, circles, etc. &nbsp;|&nbsp; Option to select various colors &nbsp;|&nbsp; Pencil tool for drawing freehand shapes &nbsp;|&nbsp; Eraser tool for removing parts of an image &nbsp;|&nbsp; Zooming for magnified pixel editing
+  </div>
+
+  <h3>7.3 Image Editing Tools</h3>
+  <p>Editing tools are used to edit or reshape existing images and pictures. These tools can be used to create images from scratch as well as from original artwork files created with scanners, digital cameras, clip art files, or painting and drawing tools.</p>
+  <div class="info-strip">
+    <span class="icon">📸</span>
+    <span><strong>Examples:</strong> Adobe Photoshop, Paint Shop Pro</span>
+  </div>
+
+  <h3>7.4 Sound Editing Tools</h3>
+  <p>These tools are used to very easily integrate sound into multimedia projects. You can copy, paste, and edit segments of a sound file using these tools. The presence of sound mostly enhances the effect of a graphic presentation — especially in video.</p>
+  <div class="info-strip">
+    <span class="icon">🎵</span>
+    <span><strong>Examples:</strong> Cool Edit Pro, Sound Forge, Pro Tools</span>
+  </div>
+  <div class="highlight-box">
+    <strong>Features include:</strong><br>
+    • Record your own music, voice, or any other audio<br>
+    • Record sound from CD, DVD, radio, or any other sound player<br>
+    • Mix and edit sound with any other audio<br>
+    • Apply special effects like Equalizer, Echo, Reverse
+  </div>
+
+  <h3>7.5 Video Editing Tools</h3>
+  <p>These tools are used to edit, cut, copy, and paste video and audio files. Video editing requires expensive special equipment, understanding, and training. Video editing is an artistic process in which you decide which elements received from various sources should be kept, removed, or added so that the edited video looks integrated, logical, and planned.</p>
+  <p>Today computers are powerful enough to handle this work, disk space is cheap, and it is very easy to store and distribute completed work on DVD.</p>
+  <div class="info-strip">
+    <span class="icon">🎬</span>
+    <span><strong>Examples:</strong> Adobe Premiere, Adobe After Effects — and many other software with their own specific capabilities and limitations</span>
+  </div>
+
+  <h3>7.6 Animation &amp; Modelling Tools</h3>
+  <p>Still images are displayed at a fixed rate using animation and modelling tools to give visual effects — this technique is called animation. These tools have features like multiple windows that allow you to see your model in each dimension, the ability to drag and drop basic shapes into the scene, colour and texture mapping, and the ability to add realistic effects like transparency, shading, and fog to scenes.</p>
+  <div class="info-strip">
+    <span class="icon">🎭</span>
+    <span><strong>Examples:</strong> Blender, 3D Animation &amp; Modelling Tool, 3D Studio Max, Maya — and many others with their own specific capabilities and limitations</span>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════════ SECTION 8 ═══════════════════ -->
+<div class="section">
+<div class="card" id="s8">
+  <div class="section-num">Section 8</div>
+  <h2>Creating Simple Multimedia with PowerPoint</h2>
+  <hr class="divider">
+  <p>PowerPoint is an application software used especially for presentations. For effective presentations, PowerPoint has the capability to integrate all multimedia elements into a presentation. Tools are available in PowerPoint to add multimedia elements. You can crop images, trim video clips, and adjust audio levels.</p>
+
+  <div class="info-strip">
+    <span class="icon">💡</span>
+    <span>PowerPoint's built-in multimedia tools are sufficient for creating presentations — you generally don't need additional multimedia applications.</span>
+  </div>
+
+  <h3>8.1 Images in PowerPoint: Still &amp; Animated</h3>
+  <p>The simplest way to add an image to PowerPoint is to just copy and paste it. You can copy any image to your clipboard and then right-click to paste it into PowerPoint.</p>
+  <div class="step-list">
+    <div class="step-item"><div class="step-num">1</div><div class="step-content"><strong>Via Insert Menu</strong><span>Go to Insert menu → click on Picture menu → browse and select the image → insert</span></div></div>
+    <div class="step-item"><div class="step-num">2</div><div class="step-content"><strong>Multiple Images at Once</strong><span>Hold Control key on keyboard and click on several images → they will all insert into one slide simultaneously</span></div></div>
+    <div class="step-item"><div class="step-num">3</div><div class="step-content"><strong>Resize &amp; Move</strong><span>Once an image is inserted, click on it to drag it around the slide. Click and drag the corner to resize the image as needed.</span></div></div>
+  </div>
+
+  <h3>8.2 PowerPoint Picture Tools</h3>
+  <p>PowerPoint has a set of tools to edit images within the application. You don't always need to use Photoshop or another image editor to make basic changes to your images. When you select an image, a new option appears in the PowerPoint ribbon — click on Picture Tools to see the image editing tools format.</p>
+
+  <h3>8.3 Audio in PowerPoint</h3>
+  <p>Audio is another type of multimedia that you can work with in PowerPoint. If you have an MP3 or WAV audio file on your computer, you can easily add it to your presentation.</p>
+  <div class="step-list">
+    <div class="step-item"><div class="step-num">1</div><div class="step-content"><strong>Insert Audio</strong><span>Click Insert → Audio → select the audio file saved on your computer</span></div></div>
+    <div class="step-item"><div class="step-num">2</div><div class="step-content"><strong>Play During Presentation</strong><span>After selecting an audio file, a small speaker icon appears on your slide. Hover over it and press the play button to play it while presenting.</span></div></div>
+  </div>
+
+  <h3>8.4 Audio Recording in PowerPoint</h3>
+  <p>If you don't have a pre-recorded audio file, you can record it within PowerPoint itself.</p>
+  <div class="step-list">
+    <div class="step-item"><div class="step-num">1</div><div class="step-content"><strong>Start Recording</strong><span>Go to Insert menu → Audio → click Record Audio option</span></div></div>
+    <div class="step-item"><div class="step-num">2</div><div class="step-content"><strong>Record</strong><span>Press the red Record button and PowerPoint will start recording audio</span></div></div>
+    <div class="step-item"><div class="step-num">3</div><div class="step-content"><strong>Stop &amp; Save</strong><span>When you've finished recording, press the Stop button (black square) to add the audio to PowerPoint</span></div></div>
+  </div>
+
+  <h3>8.5 Video in PowerPoint</h3>
+  <p>Video is a powerful type of multimedia that can make your PowerPoint presentation more impactful. PowerPoint allows you to insert video from your computer.</p>
+  <div class="highlight-box">
+    PowerPoint supports most major video file types including <strong>MP4, QuickTime, and Windows Media files</strong>. The new version of PowerPoint also allows inserting online videos from YouTube.
+  </div>
+  <p>Once the video is on your slide, you can drag the corners to resize it and control how much of the slide it covers.</p>
+
+  <h3>8.6 Animation in PowerPoint</h3>
+  <p>Animation can help make a PowerPoint presentation more dynamic and information more memorable. Among all types of animation effects, <strong>Entrance</strong> and <strong>Exit</strong> are the most common. You can also add sound to intensify your animation effects.</p>
+  <div class="highlight-box">
+    ⚠️ <strong>Expert Tip:</strong> Presentation experts advise using animation and sound effects sparingly. Too much animation can distract — it should be used just enough to make the presentation dynamic and support your subject, not so much that it diverts the audience's attention from what you are saying.
+  </div>
+
+  <h3>8.7 Slide Animation Effects</h3>
+  <p>You can animate objects on your PowerPoint slides. PowerPoint offers four types of animation:</p>
+  <div class="element-grid">
+    <div class="element-card">
+      <span class="e-num">Type 1</span>
+      <h4>🚪 Entrance</h4>
+      <p>Determines how an object is displayed on a slide — for example, an object can move onto the slide.</p>
+    </div>
+    <div class="element-card">
+      <span class="e-num">Type 2</span>
+      <h4>⭐ Emphasis</h4>
+      <p>Does something to draw attention to an object — for example, the object grows larger.</p>
+    </div>
+    <div class="element-card">
+      <span class="e-num">Type 3</span>
+      <h4>🚶 Exit</h4>
+      <p>Determines how an object leaves the slide — for example, an object can fly off the slide.</p>
+    </div>
+    <div class="element-card">
+      <span class="e-num">Type 4</span>
+      <h4>🔄 Motion Paths</h4>
+      <p>Determines how an object moves around a slide — for example, an object can move from left to right.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════════ SECTION 9 ═══════════════════ -->
+<div class="section">
+<div class="card" id="s9">
+  <div class="section-num">Section 9</div>
+  <h2>Applications of Multimedia Across Various Industries</h2>
+  <hr class="divider">
+  <p>A multimedia application is one that uses text, graphics, pictures, sound/audio, animation, and video from multiple media sources. A multimedia application is an exciting and innovative multimedia system that communicates information to users according to their needs. In today's world of Information Technology, multimedia is being used extensively in every field.</p>
+
+  <h3>9.1 Entertainment</h3>
+  <p>The entertainment industry has used multimedia technology to create games that look like real life. Many developers have used graphics, sound, and animation of multimedia to create various types of games. Special technologies like Virtual Reality have made these games just like real-life experiences. For example, flight simulator games are built with virtual reality technology that provides a real-life imaging experience.</p>
+  <p>Many multimedia games are now available on computers. Children can enjoy these experiences — for example, they can drive various types of cars, fly aircraft, play any musical instrument, play golf, etc.</p>
+  <p>Television show set designing, integration and presentation of many types of multimedia elements in films — all of these have made extensive use of multimedia in entertainment. Old black-and-white films and pictures are being colourised using multimedia. Old recorded audio is being converted digitally and stored. Depictions like dinosaurs of enormous size or armies of millions of men, cars and people flying in the air, or showing characters in icy valleys or flying through the air while sitting in a studio — all of these are being made possible through multimedia. Platforms like Netflix and Amazon Prime present digital content created using multimedia.</p>
+
+  <h3>9.2 Education</h3>
+  <p>Multimedia is used in education for computer-based training courses (commonly called CBT) and for producing reference books like encyclopaedias. A CBT user receives various types of information in a simple way through different types of presentations, tests on specific subjects, and images.</p>
+  <p><em>Edutainment</em> is an informal term used for the combination of education with entertainment, especially multimedia entertainment. Multimedia applications are being used as alternatives to printed textbooks. The utility and demand for educational multimedia applications has both increased greatly. Multimedia applications have greatly influenced the field of education — creating study material with greater clarity and appropriate examples and displaying them makes things more interesting and easy to understand through audio-visual media. Practical activities can be easily explained and understood by displaying them through animation.</p>
+
+  <h3>9.3 Journalism</h3>
+  <p>In journalism, a journalist uses text, images, sound, video, and graphics to tell an interesting story. Journalists often work for newspapers, radio, or television stations, or use computers in social media. They sample animation, data, video, graphics, and audio. Multimedia is used on a large scale in journalism. Journalists read documents, observe events, and conduct interviews with people. They take notes, tape interviews, and verify information about the stories they are working on. They often use video cameras, sound systems, and editing equipment to broadcast their thoughts on specific stories. They sometimes make public comments through social media like Twitter or Facebook. Sometimes journalists resort to animation to verify their stories where no type of image or video can be obtained.</p>
+
+  <h3>9.4 Multimedia on the Web</h3>
+  <p>In today's world of Information Technology, we are experiencing various multimedia through the web. It is a broadcasting medium offering various online facilities such as live TV, pre-recorded video, photos, animation, etc. In the coming years, most multimedia application experiences will be on the Internet.</p>
+  <p>Plug-ins and media player software programs provide us with multimedia experience on the web. The file formats requiring this software are known as MIME (Multimedia Internet Mail Extension).</p>
+</div>
+</div>
+
+<!-- ═══════════════════ SECTION 10 ═══════════════════ -->
+<div class="section">
+<div class="card" id="s10">
+  <div class="section-num">Section 10</div>
+  <h2>Future of Multimedia</h2>
+  <hr class="divider">
+  <p>'Multimedia' is a medium that uses text, audio, images, animation, and video. Initially, multimedia tools gradually developed — starting from text, audio, telecommunication equipment, video, animation, etc. Due to the innovation and creativity of scientists and the development of software along with computers, more high-tech multimedia devices were invented and distributed to users.</p>
+
+  <p>Talking about the future of multimedia — it has played a very important role in many areas, especially in marketing, education, communication, business, entertainment, medicine, etc. Today many multimedia devices and applications have been developed that successfully carry out programmes or activities like workshops, talk shows, opening ceremonies, and performances.</p>
+
+  <div class="use-grid">
+    <div class="use-card">
+      <div class="icon">🎞️</div>
+      <h4>Flash Animation</h4>
+      <p>Used to present things smoothly. Flash animation presentations convey the message in an organised way.</p>
+    </div>
+    <div class="use-card">
+      <div class="icon">🎪</div>
+      <h4>Concert Lighting</h4>
+      <p>Multimedia lighting is used in concerts to keep people in a good spirit and enhance the experience.</p>
+    </div>
+    <div class="use-card">
+      <div class="icon">🗺️</div>
+      <h4>GPS &amp; Mapping</h4>
+      <p>High-tech mobile phones provide GPRS maps (GM) to guide users when travelling to new places or while driving.</p>
+    </div>
+    <div class="use-card">
+      <div class="icon">📱</div>
+      <h4>Mobile as PAT</h4>
+      <p>Mobile phones now function like Personal Assistant Tools (PAT) — games, music, movies, internet, photography, and more.</p>
+    </div>
+  </div>
+
+  <div class="definition-box">
+    Multimedia is improving the lives of users in its applications. The most important role of multimedia is improvement in today's lifestyle. Users can learn the latest news happening all over the world without travelling. Moreover, it is proving to be an even greater entertainment tool for users. The future of multimedia is certainly very bright.
+  </div>
+
+  <div class="highlight-box">
+    ⚠️ <strong>Responsible Use:</strong> Multimedia has contributed enormously to people's lives today. Users should not misuse it and should appreciate multimedia applications.
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════════ SECTION 11 ═══════════════════ -->
+<div class="section">
+<div class="card" id="s11">
+  <div class="section-num">Section 11</div>
+  <h2>Career in Multimedia Production</h2>
+  <hr class="divider">
+  <p>Since multimedia is being used in every area of life and its scope of application is so wide, people are needed to work in as many fields. Multimedia specialists work in companies that create multimedia for the World Wide Web, CD-ROM, DVD, motion pictures, industry, kiosks, and computers. Multimedia projects include applications related to business, marketing, education, training, presentations, and entertainment.</p>
+  <p>Employment related to multimedia is in web development, communication, television, education, training, and marketing.</p>
+
+  <p><strong>Jobs you can get in Multimedia:</strong></p>
+  <div class="career-grid">
+    <div class="career-pill">🎬 Multimedia Producer</div>
+    <div class="career-pill">🌐 Web Designer</div>
+    <div class="career-pill">✍️ Web Content Creation Specialist</div>
+    <div class="career-pill">💻 Multimedia Programmer / Authoring Specialist</div>
+    <div class="career-pill">🎨 Multimedia Graphic Production Artist</div>
+    <div class="career-pill">📹 Digital Video Specialist</div>
+    <div class="career-pill">📋 Multimedia Project Manager</div>
+    <div class="career-pill">🖌️ Multimedia Artist</div>
+    <div class="career-pill">🕹️ Game Designer</div>
+    <div class="career-pill">📐 UI / UX Designer</div>
+  </div>
+
+  <div class="highlight-box">
+    <strong>And Beyond...</strong> In addition to the above, the other applications with creativity are limitless! As multimedia continues to evolve, new career roles and opportunities emerge constantly across all industries.
+  </div>
+</div>
+</div>
+
+<!-- ═══════════════════ QUICK REVISION ═══════════════════ -->
+<div class="section">
+<div class="card" style="background: linear-gradient(135deg, #e8f4fd 0%, #d0eaf9 100%);">
+  <div class="section-num" style="background: linear-gradient(135deg,#155e8a,#1abc9c)">Quick Revision</div>
+  <h2 style="color:#155e8a;">Key Concepts at a Glance</h2>
+  <hr class="divider">
+  <table class="sw-table">
+    <thead><tr><th>Term</th><th>Quick Definition</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Multimedia</strong></td><td>Integration of text, graphics, audio, video, and animation in digital form</td></tr>
+      <tr><td><strong>Animation</strong></td><td>Series of still images shown at ≥25 fps to create illusion of movement</td></tr>
+      <tr><td><strong>GPU</strong></td><td>Graphical Processing Unit — dedicated processor for rendering graphics</td></tr>
+      <tr><td><strong>ADC</strong></td><td>Analog-to-Digital Converter — converts analog audio signals to digital</td></tr>
+      <tr><td><strong>CBT</strong></td><td>Computer-Based Training — multimedia-powered e-learning courses</td></tr>
+      <tr><td><strong>MIME</strong></td><td>Multimedia Internet Mail Extension — file formats for web multimedia</td></tr>
+      <tr><td><strong>Edutainment</strong></td><td>Combination of education and entertainment using multimedia</td></tr>
+      <tr><td><strong>Digitization</strong></td><td>Process of converting analog information to digital form</td></tr>
+      <tr><td><strong>Virtual Reality</strong></td><td>Simulated environment created through multimedia for immersive experience</td></tr>
+      <tr><td><strong>CAD</strong></td><td>Computer-Aided Design — joystick used mainly here and in gaming</td></tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Main Site</h4>
+        <a href="https://wondermayank.github.io/" target="_blank">🌐 wondermayank.github.io</a>
+        <a href="https://wondermayank.github.io/terms" target="_blank">📄 Terms of Use</a>
+        <a href="https://wondermayank.github.io/privacy" target="_blank">🔒 Privacy Policy</a>
+        <a href="https://wondermayank.github.io/disclaimer" target="_blank">⚠️ Disclaimer</a>
+        <a href="https://wondermayank.github.io/contract" target="_blank">📝 Contract</a>
+        <a href="https://wondermayank.github.io/contact" target="_blank">📬 Contact Owner</a>
+      </div>
+      <div class="footer-col">
+        <h4>CBT Platform</h4>
+        <a href="https://commercesehoga.github.io/dashboard" target="_blank">🎯 CBT Mock Platform</a>
+        <a href="https://commercesehoga.github.io/help" target="_blank">💛 Donation / Support</a>
+      </div>
+      <div class="footer-col">
+        <h4>About These Notes</h4>
+        <a href="#s1">📘 Unit 1: Introduction</a>
+        <a href="#s5">📝 Elements of Multimedia</a>
+        <a href="#s6">⚙️ Hardware &amp; Software</a>
+        <a href="#s11">💼 Career Options</a>
+      </div>
+      <div class="footer-col">
+        <h4>Course Info</h4>
+        <a href="#">📚 Course: 2DCA1 – IT Trends</a>
+        <a href="#">🎓 Unit 1: Multimedia</a>
+        <a href="#">🏛️ Makhanlal Chaturvedi National University</a>
+        <a href="#">📖 Dr. Sunita Dwivedi</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Study Notes converted to English from official Hindi course material &nbsp;|&nbsp; 2DCA1 – IT Trends, Unit 1 &nbsp;|&nbsp; Makhanlal Chaturvedi National University of Journalism &amp; Communication, Bhopal &nbsp;|&nbsp; For educational use only</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
